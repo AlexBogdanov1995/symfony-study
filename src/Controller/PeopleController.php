@@ -79,7 +79,9 @@ class PeopleController extends Controller
      */
     public function delete(Request $request, People $person): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$person->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete'.$person->getId(),
+            $request->request->get('_token')))
+        {
             $em = $this->getDoctrine()->getManager();
             $em->remove($person);
             $em->flush();
