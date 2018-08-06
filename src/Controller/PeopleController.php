@@ -37,6 +37,10 @@ class PeopleController extends Controller
             $em->persist($person);
             $em->flush();
 
+            $this->addFlash(
+                'notification',
+                'Новый пользователь сохранен в БД!'
+            );
             return $this->redirectToRoute('people_index');
         }
 
