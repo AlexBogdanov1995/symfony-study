@@ -36,8 +36,9 @@
                 <td>{{ person.position }}</td>
                 <td>{{ person.password }}</td>
                 <td>
-                    <a href="{{ path('people_show', {'id': person.id}) }}">show</a>
+                    <a class="button_a" href="{{ path('people_show', {'id': person.id}) }}">show</a>
                     <a href="{{ path('people_edit', {'id': person.id}) }}">edit</a>
+                    <a href="{{ path('people_delete', {'id': person.id}) }}">delete</a>
                 </td>
             </tr>
         {% else %}
