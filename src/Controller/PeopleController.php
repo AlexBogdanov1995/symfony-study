@@ -37,6 +37,10 @@ class PeopleController extends Controller
             $em->persist($person);
             $em->flush();
 
+            $this->addFlash(
+                'notification',
+                'Новый пользователь сохранен в БД!'
+            );
             return $this->redirectToRoute('people_index');
         }
 
@@ -79,7 +83,9 @@ class PeopleController extends Controller
      */
     public function delete(Request $request, People $person): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$person->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete'.$person->getId(),
+            $request->request->get('_token')))
+        {
             $em = $this->getDoctrine()->getManager();
             $em->remove($person);
             $em->flush();
