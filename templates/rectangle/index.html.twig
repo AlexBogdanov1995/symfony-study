@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rectangle index{% endblock %}
+
+{% block body %}
+    <h1>Rectangle index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Width</th>
+                <th>Height</th>
+                <th>Background_color</th>
+                <th>Border_radius</th>
+                <th>Border_width</th>
+                <th>Border_color</th>
+                <th>Border_style</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for rectangle in rectangles %}
+            <tr>
+                <td>{{ rectangle.id }}</td>
+                <td>{{ rectangle.width }}</td>
+                <td>{{ rectangle.height }}</td>
+                <td>{{ rectangle.backgroundColor }}</td>
+                <td>{{ rectangle.borderRadius }}</td>
+                <td>{{ rectangle.borderWidth }}</td>
+                <td>{{ rectangle.borderColor }}</td>
+                <td>{{ rectangle.borderStyle }}</td>
+                <td>
+                    <a href="{{ path('rectangle_show', {'id': rectangle.id}) }}">show</a>
+                    <a href="{{ path('rectangle_edit', {'id': rectangle.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('rectangle_new') }}">Create new</a>
+{% endblock %}

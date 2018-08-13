@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Rectangle{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/css/rectangle_create.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="main_flex">
+        <div class="show_area">
+            <div class="constructor">
+                <div class="title">
+                    Create new Rectangle
+                </div>
+            </div>
+            <div class="working_area">
+                <div class="rectangle_form"></div>
+            </div>
+        </div>
+        <div class="rectangle">
+
+            {{ include('rectangle/_form.html.twig') }}
+            <div class="a_container">
+                <a href="{{ path('rectangle_index') }}">back to list</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+{{ parent() }}
+        <script src="{{ asset('build/js/script_rectangle.js') }}"></script>
+{% endblock %}

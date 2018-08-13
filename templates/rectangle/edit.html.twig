@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Rectangle{% endblock %}
+
+{% block body %}
+    <h1>Edit Rectangle</h1>
+
+    {{ include('rectangle/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('rectangle_index') }}">back to list</a>
+
+    {{ include('rectangle/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rectangle{% endblock %}
+
+{% block body %}
+    <h1>Rectangle</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ rectangle.id }}</td>
+            </tr>
+            <tr>
+                <th>Width</th>
+                <td>{{ rectangle.width }}</td>
+            </tr>
+            <tr>
+                <th>Height</th>
+                <td>{{ rectangle.height }}</td>
+            </tr>
+            <tr>
+                <th>Background_color</th>
+                <td>{{ rectangle.backgroundColor }}</td>
+            </tr>
+            <tr>
+                <th>Border_radius</th>
+                <td>{{ rectangle.borderRadius }}</td>
+            </tr>
+            <tr>
+                <th>Border_width</th>
+                <td>{{ rectangle.borderWidth }}</td>
+            </tr>
+            <tr>
+                <th>Border_color</th>
+                <td>{{ rectangle.borderColor }}</td>
+            </tr>
+            <tr>
+                <th>Border_style</th>
+                <td>{{ rectangle.borderStyle }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('rectangle_index') }}">back to list</a>
+
+    <a href="{{ path('rectangle_edit', {'id': rectangle.id}) }}">edit</a>
+
+    {{ include('rectangle/_delete_form.html.twig') }}
+{% endblock %}
