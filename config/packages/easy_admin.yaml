@@ -1,5 +1,7 @@
 easy_admin:
     entities:
         # List the entity class name you want to manage
-        - App\Entity\People
-        - App\Entity\Rectangle
+        People:
+            class: App\Entity\People
+        Rectangle:
+            class: App\Entity\Rectangle
