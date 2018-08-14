@@ -2,31 +2,49 @@
 
 {% block title %}New Rectangle{% endblock %}
 {% block stylesheets %}
+    {{ parent() }}
     <link rel="stylesheet" href="{{ asset('build/css/rectangle_create.css') }}">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 {% endblock %}
 
 {% block body %}
+    <div class="container-fluid custom-container">
+        <ul class="nav nav-tabs custom-nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item custom-nav_item">
+                <a class="nav-link active" id="SizeAndColor-tab" data-toggle="tab" href="#SizeAndColor" role="tab" aria-controls="SizeAndColor" aria-selected="true">Блок</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="text-tab" data-toggle="tab" href="#text" role="tab" aria-controls="SizeAndColor" aria-selected="true">Инструменты</a>
+            </li>
+        </ul>
+    </div>
     <div class="main_flex">
         <div class="show_area">
             <div class="constructor">
                 <div class="title">
-                    Create new Rectangle
+                    Создание нового блока
                 </div>
-            </div>
-            <div class="working_area">
-                <div class="rectangle_form"></div>
             </div>
         </div>
         <div class="rectangle">
-
-            {{ include('rectangle/_form.html.twig') }}
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="SizeAndColor" role="tabpanel" aria-labelledby="SizeAndColor-tab">
+                    {{ include('rectangle/_form.html.twig') }}
+                </div>
+                <div class="tab-pane fade" id="text" role="tabpanel" aria-labelledby="text-tab">
+                    Привет
+                </div>
+            </div>
             <div class="a_container">
                 <a href="{{ path('rectangle_index') }}">back to list</a>
             </div>
+            <button class="btn-primary create_block_btn">Создать блок</button>
         </div>
     </div>
 {% endblock %}
 {% block javascripts %}
 {{ parent() }}
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="{{ asset('build/js/script_rectangle.js') }}"></script>
 {% endblock %}
