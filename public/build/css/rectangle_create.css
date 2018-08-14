@@ -1,12 +1,11 @@
-.rectangle {
-    float: right;
-    background-image: url("../image/background_image_right-menu1.png");
-    padding: 5px;
-    flex-basis: 10%;
+.left-menu {
+    background-color: #09181f;
     border: none;
-    border-top: solid 1px #797b7e;
-    border-right: solid 1px #797b7e;
     color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 125px;
 }
 
 #rectangle {
@@ -31,13 +30,11 @@
 .show_area {
     display: flex;
     flex-direction: column;
-    flex-basis: 90%;
+    flex-basis: 100%;
 }
 
 .constructor {
     height: 100%;
-    background-image: url("../image/background_image.png");
-    opacity: 0.6;
     background-size: cover;
     border: solid 1px;
 }
@@ -113,7 +110,97 @@ body {
     padding-top: 5px;
 }
 
-.nav-link.active {
+.flex-container-main {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-container-child {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.front {
+    position: fixed;
+    z-index: 100;
+    background: #09181f;
+    width: 120px ;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back {
+    position: absolute;
+    width: 300px;
+    z-index: 5;
+    background: #007bff8f;
+    transition: 1s;
+    transform: translateX(-95px);
+    height: 100%;
+}
+
+.active {
     background-color: #007bff8f !important;
     border-color: #0d6aad !important;
+    color: #495057;
+    width: 125px;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.nav-item:hover {
+    color: black !important;
+    background-color: #fff !important;
+    border-color: #262b30 #f8f9fa #262b30 #262b30 !important;
+    width: 125px;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.nav-tabs {
+    margin-left: 17px;
+    border: none;
+}
+.nav-link {
+    color: white !important;
+}
+nav {
+    width: inherit;
+}
+
+.close_back {
+    float: right;
+    cursor: pointer;
+    background: transparent;
+    border: solid 1px;
+}
+
+.back_content {
+    display: flex !important;
+    width: inherit;
+    margin-top: 30px;
+    justify-content: space-between;
+    background-color: transparent !important;;
+}
+
+.block {
+    width:30px;
+    height: 30px;
+    border: solid 1px black;
+    position: absolute!important;
+}
+
+.img {
+    width:30px;
+    height: 30px;
+    border: solid 1px black;
+    border-radius: 50%;
+    position: absolute!important;
 }

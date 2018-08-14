@@ -4,12 +4,12 @@ $(function () {
 
             var $constructor = $(".constructor");
 
-        $constructor.append('<div class="dragBlock"></div>');
+    //    $constructor.append('<div class="dragBlock"></div>');
 
-            $('.dragBlock').resizable({
-                containment: 'parent'
+            $('.element').resizable({
+               // containment: 'parent'
             }).draggable({
-                containment:'parent'
+               // containment:'parent'
             });
 
         var $form_inputs = $('#rectangle div').find('input');
@@ -41,6 +41,22 @@ $(function () {
         });
 
     };
-    $(".create_block_btn").click(create_button);
+    $(".nav-item").click(create_button);
+
+    $('.nav-link').click(function () {
+        $('.back').css('transform','translateX(210px)');
+    });
+
+    // $(document).click(function (e){ // событие клика по веб-документу
+    //     var div = $(".back"); // тут указываем ID элемента
+    //     if (!div.is(e.target) && ! $('.nav-link').is(e.target) // если клик был не по нашему блоку
+    //         && div.has(e.target).length === 0) { // и не по его дочерним элементам
+    //         div.css('transform','translateX(-95px)'); // скрываем его
+    //     }
+    // });
+    $('.close_back').click(function () {
+        $('.back').css('transform','translateX(-95px)');
+    });
+
 
 });
